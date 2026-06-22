@@ -1,0 +1,55 @@
+.cats {
+  padding: 2rem 1.5rem;
+  background: var(--bg-warm);
+  border-bottom: 0.5px solid var(--border);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.catGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.catCard {
+  background: var(--bg-page);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 0.85rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.catIcon {
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+  display: block;
+}
+
+.catTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  transition: color 0.25s ease;
+}
+
+.catBody {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-muted);
+  transition: color 0.25s ease;
+}
