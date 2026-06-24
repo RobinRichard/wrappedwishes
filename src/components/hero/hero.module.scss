@@ -1,8 +1,11 @@
 .hero {
   background: var(--bg-dark);
-  padding: 3rem 1.5rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   transition: background 0.25s ease;
+  height: min(500px, 100vh);
 }
 
 .heroSub {
@@ -11,11 +14,12 @@
   letter-spacing: 0.09em;
   color: var(--accent);
   text-transform: uppercase;
-  margin-bottom: 0.65rem;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
 .heroTitle {
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-on-dark);

@@ -15,9 +15,15 @@ export function AppContextProvider({
   children: React.ReactNode;
 }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "light"; // SSR guard
-    return (localStorage.getItem("theme") as Theme) ?? "light";
+    return "light";
+    // if (typeof window === "undefined") return "light"; // SSR guard
+    // return (localStorage.getItem("theme") as Theme) ?? "light";
   });
+
+  // useEffect(() => {
+  //   document.documentElement.classList.remove("light", "dark");
+  //   document.documentElement.classList.add(theme);
+  // }, [theme]);
 
   const toggle = () => {
     setTheme(prev => {

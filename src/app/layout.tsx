@@ -3,6 +3,8 @@ import { Nunito } from "next/font/google";
 import { AppContextProvider } from "@/store";
 import { Layout } from "@/layout";
 
+import "./globals.css";
+
 const nunito = Nunito({
   subsets: ["latin", "latin-ext"],
   variable: "--font-nunito",
@@ -20,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} h-full antialiased`}>
+    <html lang="en" className={`${nunito.variable} light h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <AppContextProvider>
           <Layout>{children}</Layout>

@@ -1,15 +1,17 @@
 import { Hero } from "@/components/hero";
-import { Process } from "@/components/process";
+import { HowItWorks } from "@/components/process";
 import { Categories } from "@/components/categories";
 import { Testimonials } from "@/components/testimonials";
+import { CTASection } from "@/components/cta";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Process />
+      <HowItWorks />
       <Categories />
       <Testimonials />
+      <CTASection />
     </main>
   );
 }
