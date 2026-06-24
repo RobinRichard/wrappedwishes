@@ -2,16 +2,16 @@ import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/process";
 import { Categories } from "@/components/categories";
 import { Testimonials } from "@/components/testimonials";
-import { CTASection } from "@/components/cta";
+import { Enquiry } from "@/components/enquiry";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <HowItWorks />
       <Categories />
+      <HowItWorks />
+      <Enquiry />
       <Testimonials />
-      <CTASection />
     </main>
   );
 }

@@ -1,77 +1,133 @@
 .hero {
+  min-height: 100vh;
   background: var(--bg-dark);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.ringSmall,
+.ringLarge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+
+.ringSmall {
+  width: 600px;
+  height: 600px;
+  border: 0.5px solid rgba(212, 197, 169, 0.12);
+}
+
+.ringLarge {
+  width: 900px;
+  height: 900px;
+  border: 0.5px solid rgba(212, 197, 169, 0.07);
+}
+
+.content {
   text-align: center;
-  transition: background 0.25s ease;
-  height: min(500px, 100vh);
+  max-width: 620px;
+  position: relative;
+  z-index: 1;
 }
 
-.heroSub {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  color: var(--accent);
+.eyebrow {
+  font-size: 0.875rem;
+  color: var(--bg-band);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  display: inline-block;
+  margin-bottom: 1.25rem;
 }
 
-.heroTitle {
-  font-size: 42px;
-  font-weight: 700;
+.title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--bg-page);
   line-height: 1.2;
-  color: var(--text-on-dark);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
 }
 
-.heroBody {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.7;
+.titleAccent {
+  font-style: italic;
   color: var(--text-subtle);
-  max-width: 420px;
-  margin: 0 auto 1.75rem;
 }
 
-.heroBtns {
+.description {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.8;
+  max-width: 30rem;
+  color: var(--text-subtle);
+  margin: 0 auto 2.5rem;
+  opacity: 0.85;
+}
+
+.actions {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.btnPrimary {
-  background: var(--accent);
-  color: var(--text-on-dark);
-  font-size: 13px;
+.primaryButton {
+  background: var(--bg-band);
+  color: var(--color-page);
+  font-size: 15px;
   font-weight: 500;
-  padding: 0.65rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: opacity 0.15s ease;
-
-  &:hover {
-    opacity: 0.88;
-  }
+  transition: background 0.2s ease;
 }
 
-.btnSecondary {
+.secondaryButton {
   background: transparent;
   color: var(--text-subtle);
-  font-size: 13px;
-  padding: 0.65rem 1.5rem;
-  border-radius: 8px;
-  border: 0.5px solid var(--text-muted);
+  font-size: 15px;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  border: 0.5px solid rgba(136, 135, 128, 0.5);
   cursor: pointer;
-  transition:
-    color 0.15s ease,
-    border-color 0.15s ease;
+  transition: all 0.2s ease;
+}
 
-  &:hover {
-    color: var(--text-on-dark);
-    border-color: var(--text-subtle);
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(212, 197, 169, 0.5), transparent);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1.5rem;
+  }
+
+  .ringSmall {
+    width: 400px;
+    height: 400px;
+  }
+
+  .ringLarge {
+    width: 650px;
+    height: 650px;
+  }
+
+  .description {
+    font-size: 14px;
   }
 }

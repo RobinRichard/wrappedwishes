@@ -1,0 +1,55 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+.submitButton {
+  background: var(--bg-band);
+  color: var(--color-page);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}

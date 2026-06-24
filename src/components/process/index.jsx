@@ -1,7 +1,9 @@
 "use client";
-import { COLORS, fadeIn, fadeUp } from "@/constants";
+import { fadeUp } from "@/constants";
 import { useReveal } from "@/hooks";
 import { motion } from "framer-motion";
+import styles from "./process.module.scss";
+import { SectionLabel, SectionHeading } from "@/typography";
 
 const steps = [
   {
@@ -23,58 +25,15 @@ const steps = [
 
 export const HowItWorks = () => {
   const [ref, inView] = useReveal();
+
   return (
-    <section
-      ref={ref}
-      style={{
-        minHeight: "100vh",
-        background: COLORS.cream,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "6rem 2rem",
-      }}>
-      <motion.p
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={fadeIn}
-        custom={0}
-        style={{
-          fontSize: 11,
-          fontWeight: 500,
-          color: COLORS.terracotta,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          marginBottom: "0.75rem",
-        }}>
-        How it works
-      </motion.p>
-
-      <motion.h2
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={fadeUp}
-        custom={0.1}
-        style={{
-          fontSize: "clamp(1.6rem, 3vw, 2.5rem)",
-          fontWeight: 600,
-          color: COLORS.dark,
-          textAlign: "center",
-          marginBottom: "4rem",
-          letterSpacing: "-0.02em",
-        }}>
+    <section ref={ref} className={styles.section}>
+      <SectionLabel inView={inView}>How it works</SectionLabel>
+      <SectionHeading inView={inView}>
         Simple, personal, stress-free.
-      </motion.h2>
+      </SectionHeading>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "1.5rem",
-          maxWidth: 900,
-          width: "100%",
-        }}>
+      <div className={styles.grid}>
         {steps.map((s, i) => (
           <motion.div
             key={s.num}
@@ -83,35 +42,10 @@ export const HowItWorks = () => {
             variants={fadeUp}
             custom={0.2 + i * 0.15}
             whileHover={{ y: -6, transition: { duration: 0.3 } }}
-            style={{
-              background: "#fff",
-              border: `0.5px solid ${COLORS.sand}`,
-              borderRadius: 14,
-              padding: "2rem 1.75rem",
-            }}>
-            <div
-              style={{
-                fontSize: 11,
-                fontWeight: 500,
-                color: COLORS.terracotta,
-                letterSpacing: "0.1em",
-                marginBottom: "1.25rem",
-              }}>
-              {s.num}
-            </div>
-            <h3
-              style={{
-                fontSize: 18,
-                fontWeight: 500,
-                color: COLORS.dark,
-                marginBottom: "0.6rem",
-                letterSpacing: "-0.01em",
-              }}>
-              {s.title}
-            </h3>
-            <p style={{ fontSize: 13, color: COLORS.gray, lineHeight: 1.65 }}>
-              {s.body}
-            </p>
+            className={styles.card}>
+            <div className={styles.cardNumber}>{s.num}</div>
+            <h3 className={styles.cardTitle}>{s.title}</h3>
+            <p className={styles.cardBody}>{s.body}</p>
           </motion.div>
         ))}
       </div>

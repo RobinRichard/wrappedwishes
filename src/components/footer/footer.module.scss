@@ -1,0 +1,34 @@
+.footer {
+  background: var(--bg-dark);
+  padding: 2.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 0.5px solid rgba(212, 197, 169, 0.15);
+}
+
+.brand {
+  color: var(--bg-page);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.link {
+  color: var(--text-subtle);
+  font-size: 13px;
+  text-decoration: none;
+  opacity: 0.75;
+}

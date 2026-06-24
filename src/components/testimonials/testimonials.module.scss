@@ -1,49 +1,63 @@
-.testimonials {
-  padding: 2rem 1.5rem;
-  background: var(--bg-page);
-  border-bottom: 0.5px solid var(--border);
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease;
+.section {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+}
 
-  .gird {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    margin-top: 1rem;
+.subTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--bg-band);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
 
-    .card {
-      background: var(--bg-card);
-      border: 0.5px solid var(--border);
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: var(--shadow-card);
-      transition:
-        background 0.25s ease,
-        border-color 0.25s ease;
+.title {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: var(--bg-page);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  letter-spacing: -0.02em;
+}
 
-      .stars {
-        color: var(--gold);
-        font-size: 13px;
-        margin-bottom: 0.4rem;
-        letter-spacing: 0.05em;
-      }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  width: 100%;
+}
 
-      .quote {
-        font-size: 13px;
-        font-weight: 400;
-        line-height: 1.6;
-        color: var(--text-review);
-        font-style: italic;
-        margin-bottom: 0.55rem;
-        transition: color 0.25s ease;
-      }
+.card {
+  background: rgba(249, 244, 238, 0.05);
+  border: 0.5px solid rgba(212, 197, 169, 0.18);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
 
-      .name {
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--accent);
-      }
-    }
-  }
+.stars {
+  color: var(--gold);
+  font-size: 13px;
+  margin-bottom: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.quote {
+  font-size: 13px;
+  color: var(--text-subtle);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--bg-band);
 }

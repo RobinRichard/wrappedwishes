@@ -1,48 +1,58 @@
 .nav {
-  background: var(--bg-dark);
-  padding: 0.9rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background 0.25s ease;
+  padding: 0 2.5rem;
+  height: 64px;
+  background: transparent;
+  backdrop-filter: none;
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease,
+    border-bottom 0.4s ease;
+  border-bottom: 0.5px solid transparent;
+
+  // Dedicated class styling for the scrolled state
+  &.scrolled {
+    background: rgba(61, 53, 48, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid rgba(212, 197, 169, 0.2);
+  }
 }
 
-.navLogo {
-  color: var(--text-on-dark);
+.brand {
+  color: var(--bg-page);
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.01em;
 }
 
-.navLinks {
+.menu {
   display: flex;
-  gap: 1.25rem;
-
-  a {
-    color: var(--text-subtle);
-    font-size: 13px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.15s ease;
-
-    &:hover {
-      color: var(--text-on-dark);
-    }
-  }
+  gap: 2rem;
+  align-items: center;
 }
 
-.navCta {
-  background: var(--accent);
-  color: var(--text-on-dark);
+.link {
+  color: var(--text-subtle);
   font-size: 13px;
-  font-weight: 600;
-  padding: 5px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  border: none;
-  transition: opacity 0.15s ease;
+  text-decoration: none;
+  opacity: 0.85;
+}
 
-  &:hover {
-    opacity: 0.88;
-  }
+.btn {
+  background: var(--bg-band);
+  color: var(--bg-page);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
 }
