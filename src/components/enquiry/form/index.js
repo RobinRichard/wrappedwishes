@@ -1,94 +1,133 @@
 "use client";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import styles from "./form.module.scss";
 
 export const Form = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    product: "",
+    quantity: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // success | error
+
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validate = () => {
+    return form.name && form.email && form.product && form.message;
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setStatus(null);
+
+    if (!validate()) {
+      setStatus("error");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "service_50mm3pm",
+        "template_pwjhlwm",
+        {
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          product: form.product,
+          quantity: form.quantity,
+          message: form.message,
+        },
+        "IAZXp5ibY_Cov1nw1"
+      );
+
+      setStatus("success");
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        product: "",
+        quantity: "",
+        message: "",
+      });
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+
+    setLoading(false);
+  };
+
   return (
-    <form className={styles.form}>
-      <div className={styles.formRow}>
-        <div className={styles.formGroup}>
-          <label htmlFor="name">Name *</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Your name"
-            required
-          />
-        </div>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <input
+        name="name"
+        placeholder="Full Name *"
+        value={form.name}
+        onChange={handleChange}
+      />
+      <div className={styles.grid}>
+        <input
+          name="email"
+          type="email"
+          placeholder="Email *"
+          value={form.email}
+          onChange={handleChange}
+        />
 
-        <div className={styles.formGroup}>
-          <label htmlFor="email">Email *</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="your@email.com"
-            required
-          />
-        </div>
-      </div>
-
-      <div className={styles.formRow}>
-        <div className={styles.formGroup}>
-          <label htmlFor="phone">Phone</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="021 xxx xxxx"
-          />
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="requiredDate">Required Date</label>
-          <input id="requiredDate" name="requiredDate" type="date" />
-        </div>
-      </div>
-
-      <div className={styles.formGroup}>
-        <label htmlFor="productType">What would you like made? *</label>
-        <select id="productType" name="productType" required defaultValue="">
-          <option value="" disabled>
-            Select an option
-          </option>
-          <option value="shadow-box">Shadow Box</option>
-          <option value="gift-box">Gift Box</option>
-          <option value="party-bag">Party Bags</option>
-          <option value="cake-topper">Cake Topper</option>
-          <option value="custom-gift">Custom Gift</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div className={styles.formGroup}>
-        <label htmlFor="occasion">Occasion</label>
-        <select id="occasion" name="occasion" defaultValue="">
-          <option value="" disabled>
-            Select an occasion
-          </option>
-          <option>Birthday</option>
-          <option>Wedding</option>
-          <option>Baby Shower</option>
-          <option>Anniversary</option>
-          <option>Corporate Event</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div className={styles.formGroup}>
-        <label htmlFor="message">Tell us about your order *</label>
-        <textarea
-          id="message"
-          name="message"
-          rows={6}
-          placeholder="Describe what you'd like, colours, names, themes, quantities, sizes, etc."
-          required
+        <input
+          name="phone"
+          type="tel"
+          placeholder="Phone (optional)"
+          value={form.phone}
+          onChange={handleChange}
         />
       </div>
 
-      <button type="submit" className={styles.submitButton}>
-        Request Quote
+      <input
+        name="product"
+        placeholder="Product / Service *"
+        value={form.product}
+        onChange={handleChange}
+      />
+
+      <input
+        name="quantity"
+        type="number"
+        placeholder="Quantity"
+        value={form.quantity}
+        onChange={handleChange}
+      />
+
+      <textarea
+        name="message"
+        placeholder="Describe your requirements *"
+        value={form.message}
+        onChange={handleChange}
+      />
+
+      <button disabled={loading} type="submit">
+        {loading ? "Sending..." : "Submit Enquiry"}
       </button>
+
+      {status === "success" && (
+        <p className={styles.success}>Message sent successfully ✔</p>
+      )}
+
+      {status === "error" && (
+        <p className={styles.error}>
+          Please fill required fields or try again ❌
+        </p>
+      )}
     </form>
   );
 };

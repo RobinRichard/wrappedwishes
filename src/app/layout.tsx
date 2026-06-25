@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import { AppContextProvider } from "@/store";
 import { Layout } from "@/layout";
 
 import "./globals.css";
 
-const nunito = Nunito({
+const inter = Inter({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-nunito",
+  variable: "--font-inter",
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} light h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfair.variable} light h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <AppContextProvider>
           <Layout>{children}</Layout>

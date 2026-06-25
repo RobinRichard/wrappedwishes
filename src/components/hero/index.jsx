@@ -21,12 +21,12 @@ export const Hero = () => {
       {/* Background texture rings */}
       <motion.div
         className={styles.ringSmall}
-        style={{ translateX: "-50%", translateY: "-50%", y }}
+        style={{ translateX: "-50%", translateY: "-50%", rotate: "45deg", y }}
       />
 
       <motion.div
         className={styles.ringLarge}
-        style={{ translateX: "-50%", translateY: "-50%", y }}
+        style={{ translateX: "-50%", translateY: "-50%", rotate: "45deg", y }}
       />
 
       <motion.div className={styles.content} style={{ opacity, y }}>
@@ -47,7 +47,7 @@ export const Hero = () => {
           className={styles.title}>
           Personalised gifts
           <br />
-          <em className={styles.titleAccent}>for every occasion.</em>
+          for every <em className={styles.titleAccent}>occasion.</em>
         </motion.h1>
 
         <motion.p
@@ -71,17 +71,17 @@ export const Hero = () => {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className={styles.primaryButton}>
-            Get in touch
+            Start your order
           </motion.button>
 
           <motion.button
             whileHover={{
-              borderColor: "var(--color-sand)",
-              color: "var(--color-cream)",
+              borderColor: "var(--bg-band)",
+              color: "var(--bg-band)",
             }}
             whileTap={{ scale: 0.97 }}
             className={styles.secondaryButton}>
-            See my work
+            View gallery
           </motion.button>
         </motion.div>
       </motion.div>
