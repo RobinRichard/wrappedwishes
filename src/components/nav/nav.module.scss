@@ -1,58 +1,97 @@
+@use '../../styles/mixins' as *;
+
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2.5rem;
-  height: 64px;
-  background: transparent;
-  backdrop-filter: none;
+  padding: 22px 0;
   transition:
-    background 0.4s ease,
-    backdrop-filter 0.4s ease,
-    border-bottom 0.4s ease;
-  border-bottom: 0.5px solid transparent;
+    background 0.4s var(--ease),
+    padding 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
 
-  // Dedicated class styling for the scrolled state
   &.scrolled {
-    background: rgba(61, 53, 48, 0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 0.5px solid rgba(212, 197, 169, 0.2);
+    background: rgba(251, 245, 239, 0.88);
+    backdrop-filter: blur(10px);
+    padding: 14px 0;
+    box-shadow: 0 1px 0 rgba(43, 27, 34, 0.08);
   }
 }
 
-.brand {
-  color: var(--bg-page);
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-.menu {
+.inner {
+  @include wrap;
   display: flex;
-  gap: 2rem;
   align-items: center;
+  justify-content: space-between;
 }
 
-.link {
-  color: var(--text-subtle);
-  font-size: 13px;
-  text-decoration: none;
-  opacity: 0.85;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.seal {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include mobile {
+    display: none;
+  }
+
+  a {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    position: relative;
+    padding-bottom: 4px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 1.5px;
+      background: var(--gold);
+      transition: width 0.3s var(--ease);
+    }
+
+    &:hover {
+      color: var(--ink);
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .btn {
-  background: var(--bg-band);
-  color: var(--bg-page);
-  font-size: 13px;
-  font-weight: 500;
-  padding: 7px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
+  // base handled by btnPrimary/btnGhost below
+}
+
+.btnPrimary {
+  @include btn-primary;
+}
+
+.btnSmall {
+  padding: 11px 22px;
+  font-size: 13.5px;
 }

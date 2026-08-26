@@ -1,5 +1,5 @@
-import Reveal from '../Reveal/Reveal';
-import styles from './About.module.scss';
+import Reveal from "../Reveal/Reveal";
+import styles from "./About.module.scss";
 
 export default function About() {
   return (
@@ -43,9 +43,9 @@ export default function About() {
             boxes by hand — one order at a time.
           </p>
           <p>
-            Every piece is made to order, so nothing leaves the workbench
-            until it&apos;s exactly right. No two gifts are quite the same,
-            because no two wishes are either.
+            Every piece is made to order, so nothing leaves the workbench until
+            it&apos;s exactly right. No two gifts are quite the same, because no
+            two wishes are either.
           </p>
         </Reveal>
       </div>

@@ -1,27 +1,14 @@
-// import { Hero } from "@/components/hero";
-// import { HowItWorks } from "@/components/process";
-// import { Categories } from "@/components/categories";
-// import { Testimonials } from "@/components/testimonials";
-// import { Enquiry } from "@/components/enquiry";
-
-import Nav from "@/new/Nav/Nav";
-import Hero from "@/new/Hero/Hero";
-import Offerings from "@/new/Offerings/Offerings";
-import HowItWorks from "@/new/HowItWorks/HowItWorks";
-import About from "@/new/About/About";
-import Enquiry from "@/new/Enquiry/Enquiry";
-import Testimonials from "@/new/Testimonials/Testimonials";
-import Footer from "@/new/Footer/Footer";
+import Nav from "@/components/Nav/Nav";
+import Hero from "@/components/Hero/Hero";
+import Offerings from "@/components/Offerings/Offerings";
+import HowItWorks from "@/components/HowItWorks/HowItWorks";
+import About from "@/components/About/About";
+import Enquiry from "@/components/Enquiry/Enquiry";
+import Testimonials from "@/components/Testimonials/Testimonials";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
-    // <main>
-    //   <Hero />
-    //   <Categories />
-    //   <HowItWorks />
-    //   <Enquiry />
-    //   <Testimonials />
-    // </main>
     <>
       <Nav />
       <main id="top">
