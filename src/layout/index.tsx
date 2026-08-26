@@ -11,9 +11,9 @@ export const Layout = ({
 }>) => {
   return (
     <div className={`${styles.wrapper}`}>
-      <Nav />
+      {/* <Nav /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

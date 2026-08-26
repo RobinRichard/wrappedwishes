@@ -27,12 +27,13 @@ export const Nav = () => {
           </a>
         ))}
 
-        <motion.button
+        <motion.a
+          href="#enquiry"
           whileHover={{ scale: 1.05, backgroundColor: "#d4734a" }}
           whileTap={{ scale: 0.97 }}
           className={styles.btn}>
           Enquire
-        </motion.button>
+        </motion.a>
       </div>
     </motion.nav>
   );

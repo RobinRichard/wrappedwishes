@@ -1,0 +1,154 @@
+@use '../../styles/mixins' as *;
+
+.offerings {
+  padding: 110px 0;
+  background: var(--paper-alt);
+
+  @include mobile {
+    padding: 76px 0;
+  }
+}
+
+.wrap {
+  @include wrap;
+}
+
+.sectionHead {
+  max-width: 640px;
+  margin: 0 auto 64px;
+  text-align: center;
+
+  h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 16px 0 16px;
+  }
+
+  p {
+    color: var(--ink-soft);
+    font-size: 16.5px;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  background: var(--paper);
+  border-radius: 16px;
+  padding: 34px 20px 26px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), rotate 0.45s var(--ease);
+
+  &:nth-child(1) { rotate: -2.2deg; }
+  &:nth-child(2) { rotate: 1.6deg; }
+  &:nth-child(3) { rotate: -1.2deg; }
+  &:nth-child(4) { rotate: 2deg; }
+  &:nth-child(5) { rotate: -1.8deg; }
+
+  &:hover {
+    rotate: 0deg;
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+  }
+
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+}
+
+.hole {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--paper-alt);
+  border: 1.5px solid rgba(43, 27, 34, 0.15);
+  margin: 0 auto 14px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.5px;
+    height: 22px;
+    background: rgba(43, 27, 34, 0.18);
+  }
+}
+
+.num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 12px auto 14px;
+  color: var(--wine);
+}
+
+.galleryStrip {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tile {
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  background: linear-gradient(155deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border: 1.5px dashed rgba(122, 46, 74, 0.28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(43, 27, 34, 0.4);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 14px;
+
+  svg {
+    width: 26px;
+    height: 26px;
+    opacity: 0.5;
+  }
+}

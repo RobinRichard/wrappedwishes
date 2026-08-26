@@ -1,0 +1,64 @@
+@use "../../styles/mixins" as *;
+
+.about {
+  padding: 110px 0;
+  background: var(--paper-alt);
+
+  @include mobile {
+    padding: 76px 0;
+  }
+}
+
+.inner {
+  @include wrap;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.art {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--rose-soft), var(--paper) 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+
+  @include tablet {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  svg {
+    width: 56%;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: 16px;
+}
+
+.copy {
+  h2 {
+    font-size: clamp(28px, 3.6vw, 38px);
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 16px;
+    max-width: 480px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

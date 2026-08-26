@@ -10,7 +10,7 @@ export const Enquiry = () => {
   const [ref, inView] = useReveal();
 
   return (
-    <section ref={ref} className={styles.section}>
+    <section ref={ref} className={styles.section} id="enquiry">
       <SectionHeading inView={inView}>Order Enquiry</SectionHeading>
       <motion.p
         initial="hidden"
