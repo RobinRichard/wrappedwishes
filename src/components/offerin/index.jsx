@@ -1,7 +1,7 @@
-import Reveal from "../Reveal/Reveal";
-import { offerings, galleryPlaceholders } from "../../data/content";
+import Reveal from "../reveals";
+import { offerings } from "../../data/content";
 import { icons } from "./icons";
-import styles from "./Offerings.module.scss";
+import styles from "./styles.module.scss";
 
 export default function Offerings() {
   return (

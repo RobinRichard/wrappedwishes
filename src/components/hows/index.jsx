@@ -1,6 +1,6 @@
-import Reveal from '../Reveal/Reveal';
-import { steps } from '../../data/content';
-import styles from './HowItWorks.module.scss';
+import Reveal from "../reveals";
+import { steps } from "../../data/content";
+import styles from "./how.module.scss";
 
 export default function HowItWorks() {
   return (
@@ -12,7 +12,7 @@ export default function HowItWorks() {
         </Reveal>
 
         <div className={styles.steps}>
-          {steps.map((step) => (
+          {steps.map(step => (
             <Reveal as="div" className={styles.step} key={step.num}>
               <div className={styles.numRing}>{step.num}</div>
               <h3>{step.title}</h3>

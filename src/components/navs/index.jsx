@@ -1,6 +1,6 @@
 "use client";
 import useStickyNav from "@/hooks/useStickyNav";
-import styles from "./Nav.module.scss";
+import styles from "./navs.module.scss";
 import Image from "next/image";
 
 export default function Nav() {

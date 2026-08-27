@@ -1,6 +1,6 @@
-import Reveal from '../Reveal/Reveal';
-import { testimonials } from '../../data/content';
-import styles from './Testimonials.module.scss';
+import Reveal from "../reveals";
+import { testimonials } from "../../data/content";
+import styles from "./styles.module.scss";
 
 export default function Testimonials() {
   return (
@@ -12,7 +12,7 @@ export default function Testimonials() {
         </Reveal>
 
         <div className={styles.grid}>
-          {testimonials.map((t) => (
+          {testimonials.map(t => (
             <div className={styles.card} key={t.name}>
               <div className={styles.stars}>★★★★★</div>
               <p className={styles.quote}>&ldquo;{t.quote}&rdquo;</p>

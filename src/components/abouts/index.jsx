@@ -1,5 +1,5 @@
-import Reveal from "../Reveal/Reveal";
-import styles from "./About.module.scss";
+import Reveal from "../reveals";
+import styles from "./styles.module.scss";
 
 export default function About() {
   return (

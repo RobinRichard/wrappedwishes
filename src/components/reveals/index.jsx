@@ -1,6 +1,6 @@
 "use client";
 import useReveal from "@/hooks/useReveal";
-import styles from "./Reveal.module.scss";
+import styles from "./styles.module.scss";
 
 /**
  * Wraps children in a div that fades/rises into view on scroll.
