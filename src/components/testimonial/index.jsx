@@ -1,6 +1,6 @@
 import Reveal from "../reveals";
 import { testimonials } from "../../data/content";
-import styles from "./styles.module.scss";
+import styles from "./testimonial.module.scss";
 
 export default function Testimonials() {
   return (

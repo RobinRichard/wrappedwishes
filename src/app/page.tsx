@@ -1,11 +1,11 @@
-import Nav from "@/components/navs";
-import Hero from "@/components/heros";
-import Offerings from "@/components/offerin";
-import HowItWorks from "@/components/hows";
-import About from "@/components/abouts";
-import Enquiry from "@/components/enquiries";
+import Nav from "@/components/nav";
+import Hero from "@/components/hero";
+import Offerings from "@/components/offerings";
+import HowItWorks from "@/components/howItWorks";
+import About from "@/components/about";
+import Enquiry from "@/components/enquiry";
 // import Testimonials from "@/components/Testimonials/Testimonials";
-import Footer from "@/components/footers";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (

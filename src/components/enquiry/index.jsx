@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Reveal from "../reveals";
-import styles from "./styles.module.scss";
+import styles from "./enquiry.module.scss";
 import emailjs from "@emailjs/browser";
 
 const PRODUCTS = [

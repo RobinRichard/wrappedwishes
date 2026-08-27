@@ -1,7 +1,7 @@
 import Reveal from "../reveals";
 import { offerings } from "../../data/content";
 import { icons } from "./icons";
-import styles from "./styles.module.scss";
+import styles from "./offerings.module.scss";
 
 export default function Offerings() {
   return (

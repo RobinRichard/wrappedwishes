@@ -1,4 +1,4 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 .wrap {
   @include wrap;
@@ -42,8 +42,12 @@
   box-shadow: var(--shadow-soft);
   position: relative;
 
-  &:nth-child(1) { rotate: -1deg; }
-  &:nth-child(2) { rotate: 1.2deg; }
+  &:nth-child(1) {
+    rotate: -1deg;
+  }
+  &:nth-child(2) {
+    rotate: 1.2deg;
+  }
 }
 
 .stars {
