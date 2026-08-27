@@ -4,7 +4,7 @@ import Offerings from "@/components/Offerings/Offerings";
 import HowItWorks from "@/components/HowItWorks/HowItWorks";
 import About from "@/components/About/About";
 import Enquiry from "@/components/Enquiry/Enquiry";
-import Testimonials from "@/components/Testimonials/Testimonials";
+// import Testimonials from "@/components/Testimonials/Testimonials";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
         <HowItWorks />
         <About />
         <Enquiry />
-        <Testimonials />
+        {/* <Testimonials /> */}
       </main>
       <Footer />
     </>

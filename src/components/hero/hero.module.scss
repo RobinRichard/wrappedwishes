@@ -1,11 +1,19 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 .hero {
   position: relative;
   padding: 168px 0 110px;
   background:
-    radial-gradient(ellipse 60% 50% at 82% 12%, rgba(217, 143, 160, 0.16), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 8% 85%, rgba(201, 162, 83, 0.12), transparent 60%),
+    radial-gradient(
+      ellipse 60% 50% at 82% 12%,
+      rgba(217, 143, 160, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 8% 85%,
+      rgba(201, 162, 83, 0.12),
+      transparent 60%
+    ),
     var(--paper);
   overflow: hidden;
 
@@ -28,7 +36,7 @@
 
 .copy {
   h1 {
-    font-size: clamp(38px, 5.2vw, 64px);
+    font-size: clamp(38px, 5.2vw, 50px);
     margin: 18px 0 22px;
     color: var(--ink);
 
@@ -121,14 +129,48 @@
   animation: drift 9s ease-in-out infinite;
 }
 
-.f1 { width: 10px; height: 10px; background: var(--gold); top: 12%; left: 10%; }
-.f2 { width: 7px; height: 7px; background: var(--rose); top: 70%; left: 6%; animation-delay: 1.4s; }
-.f3 { width: 9px; height: 9px; background: var(--sage); top: 18%; right: 8%; animation-delay: 2.6s; }
-.f4 { width: 6px; height: 6px; background: var(--wine); bottom: 14%; right: 14%; animation-delay: 0.8s; }
+.f1 {
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  top: 12%;
+  left: 10%;
+}
+.f2 {
+  width: 7px;
+  height: 7px;
+  background: var(--rose);
+  top: 70%;
+  left: 6%;
+  animation-delay: 1.4s;
+}
+.f3 {
+  width: 9px;
+  height: 9px;
+  background: var(--sage);
+  top: 18%;
+  right: 8%;
+  animation-delay: 2.6s;
+}
+.f4 {
+  width: 6px;
+  height: 6px;
+  background: var(--wine);
+  bottom: 14%;
+  right: 14%;
+  animation-delay: 0.8s;
+}
 
 @keyframes drift {
-  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.75; }
-  50% { transform: translateY(-16px) translateX(6px); opacity: 1; }
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(-16px) translateX(6px);
+    opacity: 1;
+  }
 }
 
 .deckle {

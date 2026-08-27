@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Fraunces, Nunito_Sans } from "next/font/google";
 import { AppContextProvider } from "@/store";
 import { Layout } from "@/layout";
 
 import "./globals.css";
 
-const inter = Inter({
+const nunito = Nunito_Sans({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-nunito",
+  weight: ["400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-playfair",
+  variable: "--font-fraunces",
   weight: ["400", "500", "600", "700"],
 });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} light h-full antialiased`}>
+      className={`${nunito.variable} ${fraunces.variable} light h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <AppContextProvider>
           <Layout>{children}</Layout>
