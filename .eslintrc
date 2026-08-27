@@ -1,0 +1,91 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:import/errors",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all"
+      }
+    ],
+    "no-const-assign": "error",
+    "prettier/prettier": "error",
+    "no-unused-vars": "error",
+    "@next/next/no-html-link-for-pages": "off",
+    "react/no-unescaped-entities": 0,
+    "import/no-duplicates": [
+      "error",
+      {
+        "considerQueryString": true
+      }
+    ],
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "./**.module.scss",
+            "group": "object",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src/*"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "moduleDirectory": [
+          "node_modules",
+          "src",
+          "."
+        ]
+      }
+    }
+  }
+}

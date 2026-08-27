@@ -8,29 +8,89 @@ export default function About() {
         <Reveal as="div" className={styles.art} aria-hidden="true">
           <svg viewBox="0 0 200 200" fill="none">
             <circle cx="100" cy="100" r="70" fill="var(--paper)" />
+
             <path
-              d="M60 90c8-14 24-18 40-8"
-              stroke="var(--wine)"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M60 108c14 10 30 8 40-4"
+              d="M88 60 C 82 46, 96 34, 108 42"
               stroke="var(--gold)"
               strokeWidth="2"
               fill="none"
-              strokeLinecap="round"
+              stroke-linecap="round"
             />
-            <circle cx="70" cy="72" r="3" fill="var(--rose)" />
-            <circle cx="130" cy="130" r="3" fill="var(--sage)" />
-            <path
-              d="M100 60 L100 140"
-              stroke="var(--wine)"
-              strokeWidth="1"
-              strokeDasharray="3 5"
-              opacity="0.4"
-            />
+            <g transform="translate(108 40)">
+              <path
+                d="M0 0c-7-10-20-8-16 2-4 6 8 8 12 4 2-2 3-3 4-6z"
+                fill="var(--gold)"
+              />
+              <path
+                d="M0 0c7-10 20-8 16 2 4 6-8 8-12 4-2-2-3-3-4-6z"
+                fill="var(--gold-soft)"
+              />
+              <circle cx="0" cy="0" r="3.4" fill="var(--gold)" />
+            </g>
+
+            <g transform="translate(98 112) rotate(-8)">
+              <path
+                d="M-34 -24 H24 L38 -10 V26 A6 6 0 0 1 32 32 H-34 A6 6 0 0 1 -40 26 V-18 A6 6 0 0 1 -34 -24 Z"
+                fill="var(--rose-soft)"
+                stroke="var(--wine)"
+                strokeWidth="1.6"
+              />
+              <circle
+                cx="-24"
+                cy="-12"
+                r="3.6"
+                fill="var(--paper)"
+                stroke="var(--wine)"
+                strokeWidth="1.4"
+              />
+              <path
+                d="M-14 -2 q8 -6 18 0"
+                stroke="var(--wine)"
+                strokeWidth="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M-14 9 q14 -8 28 0"
+                stroke="var(--wine)"
+                strokeWidth="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M-14 20 q10 -6 20 0"
+                stroke="var(--wine)"
+                strokeWidth="1.6"
+                stroke-linecap="round"
+              />
+            </g>
+
+            <g transform="translate(140 128)">
+              <path
+                d="M0 0 C 6 -14, 2 -26, -6 -34"
+                stroke="var(--sage)"
+                strokeWidth="2"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <ellipse
+                cx="-2"
+                cy="-12"
+                rx="5"
+                ry="9"
+                fill="var(--sage)"
+                transform="rotate(-30 -2 -12)"
+              />
+              <ellipse
+                cx="-7"
+                cy="-25"
+                rx="4"
+                ry="7"
+                fill="var(--sage-deep)"
+                transform="rotate(-10 -7 -25)"
+              />
+            </g>
+
+            <circle cx="62" cy="70" r="2.2" fill="var(--gold)" />
+            <circle cx="150" cy="80" r="2" fill="var(--rose)" />
           </svg>
         </Reveal>
 

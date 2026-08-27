@@ -2,9 +2,9 @@
 import { useState } from "react";
 import Reveal from "../Reveal/Reveal";
 import styles from "./Enquiry.module.scss";
+import emailjs from "@emailjs/browser";
 
-const OCCASIONS = [
-  "Shadow box / keepsake",
+const PRODUCTS = [
   "Personalised gift",
   "Party bags / favours",
   "Gift box / hamper",
@@ -14,26 +14,57 @@ const OCCASIONS = [
 const initialForm = {
   name: "",
   email: "",
-  occasion: OCCASIONS[0],
-  details: "",
+  product: PRODUCTS[0],
+  quantity: "",
+  message: "",
 };
 
 export default function Enquiry() {
   const [form, setForm] = useState(initialForm);
-  const [sent, setSent] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // success | error
 
   const handleChange = field => e => {
     setForm(prev => ({ ...prev, [field]: e.target.value }));
   };
+  const validate = () => {
+    return form.name && form.email && form.product && form.message;
+  };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    // TODO: wire this up to your email/CRM provider of choice
-    // (Formspree, a serverless function, etc). Currently a demo submit.
-    console.log("Enquiry submitted:", form);
-    setSent(true);
-    setForm(initialForm);
-    setTimeout(() => setSent(false), 3200);
+    setStatus(null);
+
+    if (!validate()) {
+      setStatus("error");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "service_50mm3pm",
+        "template_pwjhlwm",
+        {
+          name: form.name,
+          email: form.email,
+          product: form.product,
+          quantity: form.quantity,
+          message: form.message,
+        },
+        "IAZXp5ibY_Cov1nw1"
+      );
+
+      setStatus("success");
+      setForm(initialForm);
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -76,12 +107,12 @@ export default function Enquiry() {
               <div className={`${styles.field} ${styles.full}`}>
                 <label htmlFor="occasion">What&apos;s it for</label>
                 <select
-                  id="occasion"
-                  value={form.occasion}
-                  onChange={handleChange("occasion")}>
-                  {OCCASIONS.map(occasion => (
-                    <option key={occasion} value={occasion}>
-                      {occasion}
+                  id="product"
+                  value={form.product}
+                  onChange={handleChange("product")}>
+                  {PRODUCTS.map(product => (
+                    <option key={product} value={product}>
+                      {product}
                     </option>
                   ))}
                 </select>
@@ -93,15 +124,25 @@ export default function Enquiry() {
                   id="details"
                   rows={4}
                   placeholder="Occasion, colours, names, quantities, timeframe..."
-                  value={form.details}
-                  onChange={handleChange("details")}
+                  value={form.message}
+                  onChange={handleChange("message")}
                 />
               </div>
             </div>
 
-            <button type="submit" className={styles.submit}>
-              {sent ? "Sent — thank you!" : "Submit enquiry"}
+            <button type="submit" disabled={loading} className={styles.submit}>
+              {loading ? "Sending..." : "Submit Enquiry"}
             </button>
+
+            {status === "success" && (
+              <p className={styles.success}>Message sent successfully ✔</p>
+            )}
+
+            {status === "error" && (
+              <p className={styles.error}>
+                Please fill required fields or try again ❌
+              </p>
+            )}
           </form>
         </Reveal>
       </div>

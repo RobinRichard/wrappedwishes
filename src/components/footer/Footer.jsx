@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./Footer.module.scss";
-import logo from "@/assert/images/logo_round.svg";
 
 export default function Footer() {
   return (
@@ -9,7 +8,12 @@ export default function Footer() {
         <div className={styles.top}>
           <div>
             <a href="#top" className={styles.logo}>
-              <Image alt="logo" src={logo} width={30} height={30} />
+              <Image
+                alt="logo"
+                src={"/images/logo.svg"}
+                width={30}
+                height={30}
+              />
               WrappedWishes
             </a>
             <p className={styles.tagline}>Gifts as unique as your wishes.</p>

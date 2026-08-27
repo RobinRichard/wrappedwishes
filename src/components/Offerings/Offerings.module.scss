@@ -1,4 +1,4 @@
-@use '../../styles/mixins' as *;
+@use "../../styles/mixins" as *;
 
 .offerings {
   padding: 110px 0;
@@ -36,11 +36,11 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 22px;
 
   @include tablet {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include mobile {
@@ -55,13 +55,26 @@
   padding: 34px 20px 26px;
   text-align: center;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), rotate 0.45s var(--ease);
+  transition:
+    transform 0.45s var(--ease),
+    box-shadow 0.45s var(--ease),
+    rotate 0.45s var(--ease);
 
-  &:nth-child(1) { rotate: -2.2deg; }
-  &:nth-child(2) { rotate: 1.6deg; }
-  &:nth-child(3) { rotate: -1.2deg; }
-  &:nth-child(4) { rotate: 2deg; }
-  &:nth-child(5) { rotate: -1.8deg; }
+  &:nth-child(1) {
+    rotate: -2.2deg;
+  }
+  &:nth-child(2) {
+    rotate: 1.6deg;
+  }
+  &:nth-child(3) {
+    rotate: -1.2deg;
+  }
+  &:nth-child(4) {
+    rotate: 2deg;
+  }
+  &:nth-child(5) {
+    rotate: -1.8deg;
+  }
 
   &:hover {
     rotate: 0deg;
@@ -91,7 +104,7 @@
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -22px;
     left: 50%;

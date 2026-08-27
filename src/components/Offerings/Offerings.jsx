@@ -1,7 +1,7 @@
-import Reveal from '../Reveal/Reveal';
-import { offerings, galleryPlaceholders } from '../../data/content';
-import { icons } from './icons';
-import styles from './Offerings.module.scss';
+import Reveal from "../Reveal/Reveal";
+import { offerings, galleryPlaceholders } from "../../data/content";
+import { icons } from "./icons";
+import styles from "./Offerings.module.scss";
 
 export default function Offerings() {
   return (
@@ -17,7 +17,7 @@ export default function Offerings() {
         </Reveal>
 
         <div className={styles.grid}>
-          {offerings.map((item) => (
+          {offerings.map(item => (
             <div key={item.title} className={styles.card}>
               <div className={styles.hole} />
               <span className={styles.num}>{item.num}</span>
@@ -28,10 +28,14 @@ export default function Offerings() {
           ))}
         </div>
 
-        <Reveal as="div" className={styles.galleryStrip} id="gallery">
+        {/* <Reveal as="div" className={styles.galleryStrip} id="gallery">
           {Array.from({ length: galleryPlaceholders }).map((_, i) => (
             <div className={styles.tile} key={i}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5">
                 <rect x="3" y="4" width="18" height="16" rx="2" />
                 <circle cx="9" cy="10" r="2" />
                 <path d="M21 16l-5-5-4 4-3-3-6 6" />
@@ -39,7 +43,7 @@ export default function Offerings() {
               Your product photo here
             </div>
           ))}
-        </Reveal>
+        </Reveal> */}
       </div>
     </section>
   );

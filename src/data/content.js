@@ -21,12 +21,6 @@ export const offerings = [
   },
   {
     num: "04",
-    title: "Shadow boxes",
-    desc: "Memory & keepsake frames",
-    icon: "frame",
-  },
-  {
-    num: "05",
     title: "Gift boxes",
     desc: "Hampers & themed sets",
     icon: "box",
