@@ -10,7 +10,7 @@ export default function Nav() {
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.inner}>
         <a href="#top" className={styles.logo}>
-          <Image alt="logo" src={"/images/logo.svg"} width={40} height={40} />
+          <Image alt="logo" src={"/logo.svg"} width={40} height={40} />
           WrappedWishes
         </a>
 
